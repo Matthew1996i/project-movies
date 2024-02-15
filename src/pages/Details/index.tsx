@@ -11,7 +11,7 @@ import {
   Grid,
   Button,
 } from "@mantine/core";
-import { redirect, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import getYear from "date-fns/getYear";
 import { formatDate, formatPeriod } from "@utils/timeHelpers";
 import {
