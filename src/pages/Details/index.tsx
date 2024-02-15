@@ -11,18 +11,20 @@ import {
   Grid,
   Button,
 } from "@mantine/core";
-import { useSearchParams } from "react-router-dom";
+import { redirect, useSearchParams } from "react-router-dom";
 import getYear from "date-fns/getYear";
 import { formatDate, formatPeriod } from "@utils/timeHelpers";
 import {
   AiOutlineClockCircle as ClockIcon,
   AiOutlineCalendar as CalendarIcon,
   AiOutlineArrowRight as ArrowRightIcon,
+  AiOutlineArrowLeft as ArrowLeftIcon,
 } from "react-icons/ai";
 import CreditsCard from "@components/CreditsCard";
 import MoviesScroll from "@components/ScrollYContainer";
 import CreditsDisplay from "@components/CreditsDisplay";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Details() {
   const [showDetails, setShowDetails] = useState(false);
@@ -47,6 +49,13 @@ export default function Details() {
   return (
     <>
       <Container className="w-full container max-w-none">
+        <Link to={`/`}>
+          <div className="flex flex-col justify-center mb-6">
+            <Button leftSection={<ArrowLeftIcon size={14} />} variant="default">
+              Voltar
+            </Button>
+          </div>
+        </Link>
         {showDetails ? (
           <>
             <CreditsDisplay
