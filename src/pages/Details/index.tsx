@@ -49,13 +49,6 @@ export default function Details() {
   return (
     <>
       <Container className="w-full container max-w-none">
-        <Link to={`/`}>
-          <div className="flex flex-col justify-center mb-6">
-            <Button leftSection={<ArrowLeftIcon size={14} />} variant="default">
-              Voltar
-            </Button>
-          </div>
-        </Link>
         {showDetails ? (
           <>
             <CreditsDisplay
@@ -67,6 +60,16 @@ export default function Details() {
           </>
         ) : (
           <>
+            <Link to={`/`}>
+              <div className="flex flex-col justify-center mb-6">
+                <Button
+                  leftSection={<ArrowLeftIcon size={14} />}
+                  variant="default"
+                >
+                  Voltar
+                </Button>
+              </div>
+            </Link>
             <Box>
               <Image
                 className="w-full"
