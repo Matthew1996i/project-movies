@@ -3,7 +3,7 @@ import { api } from "@services/api";
 import { MoviesProps } from "./types";
 
 export async function getDiscoverMovies(): Promise<MoviesProps[]> {
-  const response = await api.get(`discover/movie/`, {
+  const response = await api.get(`discover/movie`, {
     params: {
       sort_by: "popularity.desc",
       page: 1,

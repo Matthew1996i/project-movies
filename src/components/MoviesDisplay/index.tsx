@@ -1,6 +1,6 @@
 import MovieCard from "@components/MovieCard";
 import { MoviesProps } from "@hooks/main/types";
-import { Box, Loader, Text } from "@mantine/core";
+import { Loader, SimpleGrid, Text } from "@mantine/core";
 
 type ListCardRender = {
   title?: string;
@@ -21,7 +21,7 @@ export default function MoviesDisplay({
         {title}
       </Text>
 
-      <Box w="100%" className="flex flex-wrap justify-center">
+      <SimpleGrid cols={{ xl: 6, lg: 6, md: 5, xs: 3, sm: 4, base: 2 }}>
         {data?.map((movie) => (
           <MovieCard
             key={movie?.id}
@@ -32,7 +32,7 @@ export default function MoviesDisplay({
             alt={`Image ${movie?.title}`}
           />
         ))}
-      </Box>
+      </SimpleGrid>
     </div>
   );
 }
